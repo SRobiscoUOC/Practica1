@@ -28,6 +28,6 @@ fechaFin = args.Fecha_fin
 # Ejemplos de fechas con el número de filas esperado:
 #   writer.writerows(execute_form('20150101','20221105'))     # 119 filas
 #   writer.writerows(execute_form('20200301','20221105'))     #   7 filas
-with open('./dataset/dataset.csv', 'w', newline='', encoding='utf-8') as f:
+with open('./dataset/detecciones_ondas_gravitacionales.csv', 'w', newline='', encoding='utf-8') as f:
     writer = csv.writer(f)
     writer.writerows(execute_form(fechaInicio, fechaFin))
