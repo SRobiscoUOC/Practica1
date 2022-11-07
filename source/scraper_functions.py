@@ -5,6 +5,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
+from tqdm import tqdm
 
 
 # Nuestro dataset estará formado por una lista (documento) de listas (filas), que posteriormente
@@ -19,7 +20,9 @@ dataset = [['name', 'version', 'release', 'gps', 'mass_1', 'mass_1_upper', 'mass
 
 
 # Declaramos nuestro navegador
-driver = webdriver.Chrome('source\chromedriver.exe')
+options = webdriver.ChromeOptions()
+options.add_experimental_option('excludeSwitches', ['enable-logging'])
+driver = webdriver.Chrome(options=options)
 
 
 def click_checkbox(checkbox_text):
@@ -140,12 +143,12 @@ def execute_form(fecha_inicio, fecha_fin):
     # Primeramente, obtenemos cada una de sus filas (excluyendo la primera, las cabeceras)
     detecciones = driver.find_elements(By.CSS_SELECTOR, "tr")[1:]
 
-    # Y con esto obtenemos el dataset:
-
-    for d in detecciones:
+    # Y con esto obtenemos el dataset. Antes de procesarlo preparamos la barra de progreso
+    for d in tqdm(detecciones, desc ="Procesando la tabla"):
+       
         # Dividimos la fila en sus columnas
         d = d.find_elements(By.CSS_SELECTOR, "td")
-        print([i.text for i in d])
+        
         # Tratamos los valores numéricos con posibles medidas de error
         mass1, mass2, network, distance, hi_eff, total_mass, chirp_mass, detector_frame_chirp_mass, \
         redshift, final_mass = map(get_value_upper_lower, [d[4], d[5], d[6], d[7], d[8], d[9], d[10],
