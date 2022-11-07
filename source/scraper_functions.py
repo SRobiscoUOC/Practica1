@@ -6,6 +6,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 from tqdm import tqdm
+import requests
 
 
 # Nuestro dataset estará formado por una lista (documento) de listas (filas), que posteriormente
@@ -71,8 +72,14 @@ def get_value_potential_spaces(field):
 
 def execute_form(fecha_inicio, fecha_fin):
     """Función que rellena y ejecuta el formulario"""
+    # Comprobamos el user-Agent para evitar problemas   
+    url = 'https://www.gw-openscience.org'
+    headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.79 Safari/537.36'}
+    #response = requests.get(url, headers=headers)
+    
+    
     # Abrimos nuestra web
-    driver.get('https://www.gw-openscience.org')
+    driver.get(url, headers=headers)
 
     # Seleccionamos en el menú eventos y catálogos
     elem = driver.find_element(By.XPATH, "//a[contains(text(), 'Events and Catalogs')]")   
