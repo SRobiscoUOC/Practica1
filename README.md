@@ -12,17 +12,17 @@ URL del sitio web elegido: https://www.gw-openscience.org/
 
 ## Descripción del repositorio
 
-    * memoria.pdf: documento de respuestas.
+- memoria.pdf: documento de respuestas.
     
-    * /source/scraper.py: código fuente del programa principal. 
+- /source/scraper.py: código fuente del programa principal. 
     
-    * /source/scraper_functions.py: código fuente con las funciones a las que invoca el programa principal para la obtención de datos.
+- /source/scraper_functions.py: código fuente con las funciones a las que invoca el programa principal para la obtención de datos.
     
-    * /source/chromedriver.exe: driver para poder hacer webscraping con Google Chrome.
+- /source/chromedriver.exe: driver para poder hacer webscraping con Google Chrome.
     
-    * /source/requirements.txt: archivo con los requerimientos de librerías de nuestra aplicación.
+- /source/requirements.txt: archivo con los requerimientos de librerías de nuestra aplicación.
     
-    * /dataset/detecciones_ondas_gravitacionales.csv: fichero CSV con los datos obtenidos por nuestra aplicación.
+- /dataset/detecciones_ondas_gravitacionales.csv: fichero CSV con los datos obtenidos por nuestra aplicación.
     
 
 ## Publicación en Zenodo
