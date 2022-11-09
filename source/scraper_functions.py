@@ -5,6 +5,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
+
 from tqdm import tqdm
 import requests
 
@@ -23,6 +24,8 @@ dataset = [['name', 'version', 'release', 'gps', 'mass_1', 'mass_1_upper', 'mass
 # Declaramos nuestro navegador
 options = webdriver.ChromeOptions()
 options.add_experimental_option('excludeSwitches', ['enable-logging'])
+## Forzamos el USER-AGENT para que sea el que queremos
+options.add_argument("user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.79 Safari/537.36")
 driver = webdriver.Chrome(options=options)
 
 
@@ -74,12 +77,10 @@ def execute_form(fecha_inicio, fecha_fin):
     """Función que rellena y ejecuta el formulario"""
     # Comprobamos el user-Agent para evitar problemas   
     url = 'https://www.gw-openscience.org'
-    headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.79 Safari/537.36'}
-    #response = requests.get(url, headers=headers)
     
-    
+       
     # Abrimos nuestra web
-    driver.get(url, headers=headers)
+    driver.get(url)
 
     # Seleccionamos en el menú eventos y catálogos
     elem = driver.find_element(By.XPATH, "//a[contains(text(), 'Events and Catalogs')]")   
