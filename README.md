@@ -27,7 +27,9 @@ URL del sitio web elegido: https://www.gw-openscience.org/
 
 ## Publicación en Zenodo
 
-El dataset ha sido publicado en Zenodo con DOI
+El dataset ha sido publicado en Zenodo con DOI 10.5281/zenodo.7308240
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7308240.svg)](https://doi.org/10.5281/zenodo.7308240)
 
 ## Vídeo de presentación
 
