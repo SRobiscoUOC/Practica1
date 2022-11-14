@@ -34,6 +34,5 @@ El dataset ha sido publicado en Zenodo con DOI 10.5281/zenodo.7308240
 ## Vídeo de presentación
 
 Enlace al vídeo de presentación de la práctica:
-https://drive.google.com/file/d
-/1CGUqC--eCG5QZIux8NMXWOg3AOVxteNX/view?usp=sharing (https://drive.google.com
-/file/d/1CGUqC--eCG5QZIux8NMXWOg3AOVxteNX/view?usp=sharing)
+
+https://drive.google.com/file/d/1CGUqC--eCG5QZIux8NMXWOg3AOVxteNX/view?usp=sharing
